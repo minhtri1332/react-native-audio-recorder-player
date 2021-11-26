@@ -100,7 +100,7 @@ class RNAudioRecorderPlayerModule(private val reactContext: ReactApplicationCont
                 }
             }
             (recorderRunnable as Runnable).run()
-            promise.resolve("file:///$audioFileURL")
+            promise.resolve(audioFileURL)
         } catch (e: Exception) {
             Log.e(tag, "Exception: ", e)
             promise.reject("startRecord", e.message)
